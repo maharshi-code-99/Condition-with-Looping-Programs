@@ -1,251 +1,215 @@
-// Condition with Looping Programs
+// ==========================
+// 🔹 CONDITIONAL TASKS
+// ==========================
 
-// ================= CONDITIONAL TASKS =================
+// 1. Check Even or Odd
+let num1 = 7;
 
-// Even or Odd
-function evenOdd(n) {
-  return n % 2 === 0 ? "Even" : "Odd";
-}
-
-// Largest of Three
-function largest(a, b, c) {
-  return Math.max(a, b, c);
-}
-
-// Grade
-function grade(marks) {
-  if (marks >= 90) return "A";
-  else if (marks >= 75) return "B";
-  else if (marks >= 50) return "C";
-  return "Fail";
-}
-
-// Leap Year
-function leapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
-
-// Voting Eligibility
-function voting(age) {
-  return age >= 18 ? "Eligible" : "Not Eligible";
-}
-
-// Calculator (Switch)
-function calculator(a, b, op) {
-  switch(op) {
-    case '+': return a + b;
-    case '-': return a - b;
-    case '*': return a * b;
-    case '/': return b !== 0 ? a / b : "Divide by zero";
-    default: return "Invalid";
-  }
-}
-
-// Positive, Negative, Zero
-function posNegZero(n) {
-  return n > 0 ? "Positive" : n < 0 ? "Negative" : "Zero";
-}
-
-// Divisible by 3 and 5
-function divisible3and5(n) {
-  return n % 3 === 0 && n % 5 === 0;
+if (num1 % 2 === 0) {
+    console.log("Even number");
+} else {
+    console.log("Odd number");
 }
 
 
-// ================= LOOPING TASKS =================
+// 2. Largest among three numbers
+let a = 10, b = 25, c = 15;
 
-// Print 1 to 10
-for (let i = 1; i <= 10; i++) console.log(i);
-
-// Sum of N
-function sumN(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) sum += i;
-  return sum;
+if (a >= b && a >= c) {
+    console.log("Largest is:", a);
+} else if (b >= a && b >= c) {
+    console.log("Largest is:", b);
+} else {
+    console.log("Largest is:", c);
 }
 
-// Multiplication Table
-function table(n) {
-  for (let i = 1; i <= 10; i++) {
-    console.log(`${n} x ${i} = ${n * i}`);
-  }
+
+// 3. Grade based on marks
+let marks = 78;
+
+if (marks >= 90) {
+    console.log("Grade A");
+} else if (marks >= 75) {
+    console.log("Grade B");
+} else if (marks >= 50) {
+    console.log("Grade C");
+} else {
+    console.log("Fail");
 }
 
-// Factorial
-function factorial(n) {
-  let f = 1;
-  for (let i = 1; i <= n; i++) f *= i;
-  return f;
+
+// 4. Leap year check
+let year = 2024;
+
+// Leap year logic:
+// divisible by 4 AND not by 100 OR divisible by 400
+if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    console.log("Leap Year");
+} else {
+    console.log("Not a Leap Year");
 }
 
-// Reverse Number
-function reverseNum(n) {
-  return Number(n.toString().split('').reverse().join(''));
+
+// 5. Voting eligibility
+let age = 19;
+
+if (age >= 18) {
+    console.log("Eligible to vote");
+} else {
+    console.log("Not eligible to vote");
 }
 
-// Count Digits
-function countDigits(n) {
-  return n.toString().length;
+
+// 6. Arithmetic operations using switch
+let x = 10, y = 5;
+let operator = "+";  // change to -, *, /
+
+switch (operator) {
+    case "+":
+        console.log("Addition:", x + y);
+        break;
+    case "-":
+        console.log("Subtraction:", x - y);
+        break;
+    case "*":
+        console.log("Multiplication:", x * y);
+        break;
+    case "/":
+        if (y !== 0) {
+            console.log("Division:", x / y);
+        } else {
+            console.log("Cannot divide by zero");
+        }
+        break;
+    default:
+        console.log("Invalid operator");
 }
 
-// Palindrome Number
-function palindromeNum(n) {
-  return n === reverseNum(n);
+
+// 7. Positive, Negative or Zero
+let num2 = -5;
+
+if (num2 > 0) {
+    console.log("Positive");
+} else if (num2 < 0) {
+    console.log("Negative");
+} else {
+    console.log("Zero");
 }
 
-// Fibonacci Series
-function fibonacci(n) {
-  let a = 0, b = 1;
-  for (let i = 1; i <= n; i++) {
-    console.log(a);
-    [a, b] = [b, a + b];
-  }
+
+// 8. Divisible by both 3 and 5
+let num3 = 15;
+
+if (num3 % 3 === 0 && num3 % 5 === 0) {
+    console.log("Divisible by both 3 and 5");
+} else {
+    console.log("Not divisible by both");
 }
 
-// Sum of Digits
-function sumDigits(n) {
-  return n.toString().split('').reduce((a, b) => a + Number(b), 0);
-}
 
-// Prime Check
-function isPrime(n) {
-  if (n < 2) return false;
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) return false;
-  }
-  return true;
-}
 
-// Armstrong Number
-function armstrong(n) {
-  let digits = n.toString().split('');
-  let sum = digits.reduce((a, b) => a + Math.pow(Number(b), digits.length), 0);
-  return sum === n;
-}
+// ==========================
+// 🔹 LOOPING TASKS
+// ==========================
 
-// Star Pattern
-function starPattern(n) {
-  for (let i = 1; i <= n; i++) console.log('* '.repeat(i));
-}
-
-// Number Pattern
-function numberPattern(n) {
-  for (let i = 1; i <= n; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) row += j + ' ';
-    console.log(row);
-  }
-}
-
-// Print Odd Numbers
-function printOdd(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i % 2 === 0) continue;
+// 1. Print numbers from 1 to 10
+for (let i = 1; i <= 10; i++) {
     console.log(i);
-  }
-}
-
-// Stop Loop Condition
-function stopLoop(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i === 5) break;
-    console.log(i);
-  }
 }
 
 
-// ================= FUNCTIONS =================
+// 2. Sum of first N natural numbers
+let n = 5;
+let sum = 0;
 
-function sum(a, b) { return a + b; }
-function evenOddFunc(n) { return n % 2 === 0 ? "Even" : "Odd"; }
-function largestFunc(a, b, c) { return Math.max(a, b, c); }
-function factorialFunc(n) { return factorial(n); }
-function reverseString(str) { return str.split('').reverse().join(''); }
-function palindromeStr(str) { return str === reverseString(str); }
-function countVowels(str) { return (str.match(/[aeiou]/gi) || []).length; }
-function sumArray(arr) { return arr.reduce((a, b) => a + b, 0); }
-function primeFunc(n) { return isPrime(n); }
-function fibFunc(n) { return fibonacci(n); }
-function removeDuplicates(arr) { return [...new Set(arr)]; }
-function secondLargest(arr) { return [...new Set(arr)].sort((a, b) => b - a)[1]; }
-function capitalize(str) { return str.charAt(0).toUpperCase() + str.slice(1); }
-function missingNumber(arr, n) { return (n * (n + 1)) / 2 - arr.reduce((a, b) => a + b, 0); }
-function flatten(arr) { return arr.flat(Infinity); }
+for (let i = 1; i <= n; i++) {
+    sum = sum + i;
+}
+console.log("Sum =", sum);
 
 
-// ================= PATTERNS =================
+// 3. Multiplication table
+let tableNum = 5;
 
-// Right Triangle
-function rightTriangle(n) {
-  for (let i = 1; i <= n; i++) console.log('* '.repeat(i));
+for (let i = 1; i <= 10; i++) {
+    console.log(tableNum + " x " + i + " = " + (tableNum * i));
 }
 
-// Inverted Triangle
-function invertedTriangle(n) {
-  for (let i = n; i >= 1; i--) console.log('* '.repeat(i));
+
+// 4. Factorial
+let factNum = 5;
+let factorial = 1;
+
+for (let i = 1; i <= factNum; i++) {
+    factorial = factorial * i;
+}
+console.log("Factorial =", factorial);
+
+
+// 5. Reverse a number
+let original = 1234;
+let reverse = 0;
+
+while (original > 0) {
+    let digit = original % 10;        // get last digit
+    reverse = reverse * 10 + digit;   // build reverse number
+    original = (original - digit) / 10; // remove last digit
+}
+console.log("Reversed =", reverse);
+
+
+// 6. Count digits
+let countNum = 12345;
+let count = 0;
+
+while (countNum > 0) {
+    count = count + 1;
+    countNum = (countNum - (countNum % 10)) / 10;
+}
+console.log("Digits =", count);
+
+
+// 7. Palindrome check
+let palNum = 121;
+let temp = palNum;
+let rev = 0;
+
+while (temp > 0) {
+    let digit = temp % 10;
+    rev = rev * 10 + digit;
+    temp = (temp - digit) / 10;
 }
 
-// Right-Aligned Triangle
-function rightAligned(n) {
-  for (let i = 1; i <= n; i++) {
-    console.log(' '.repeat(n - i) + '* '.repeat(i));
-  }
+if (rev === palNum) {
+    console.log("Palindrome");
+} else {
+    console.log("Not Palindrome");
 }
 
-// Pyramid
-function pyramid(n) {
-  for (let i = 1; i <= n; i++) {
-    console.log(' '.repeat(n - i) + '*'.repeat(2 * i - 1));
-  }
+
+// 8. Fibonacci series up to N terms
+let terms = 7;
+let first = 0, second = 1;
+
+console.log(first);
+console.log(second);
+
+for (let i = 3; i <= terms; i++) {
+    let next = first + second;
+    console.log(next);
+    first = second;
+    second = next;
 }
 
-// Diamond
-function diamond(n) {
-  pyramid(n);
-  for (let i = n - 1; i >= 1; i--) {
-    console.log(' '.repeat(n - i) + '*'.repeat(2 * i - 1));
-  }
-}
 
-// Hollow Square
-function hollowSquare(n) {
-  for (let i = 1; i <= n; i++) {
-    let row = '';
-    for (let j = 1; j <= n; j++) {
-      row += (i === 1 || i === n || j === 1 || j === n) ? '* ' : '  ';
-    }
-    console.log(row);
-  }
-}
+// 9. Sum of digits
+let digitNum = 1234;
+let digitSum = 0;
 
-// Number Triangle
-function numberTriangle(n) {
-  for (let i = 1; i <= n; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) row += j + ' ';
-    console.log(row);
-  }
+while (digitNum > 0) {
+    let digit = digitNum % 10;
+    digitSum = digitSum + digit;
+    digitNum = (digitNum - digit) / 10;
 }
-
-// Floyd's Triangle
-function floyd(n) {
-  let num = 1;
-  for (let i = 1; i <= n; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) row += num++ + ' ';
-    console.log(row);
-  }
-}
-
-// Pascal's Triangle
-function pascal(n) {
-  for (let i = 0; i < n; i++) {
-    let row = '';
-    let val = 1;
-    for (let j = 0; j <= i; j++) {
-      row += val + ' ';
-      val = val * (i - j) / (j + 1);
-    }
-    console.log(row);
-  }
-}
+console.log("Sum of digits =", digitSum);
